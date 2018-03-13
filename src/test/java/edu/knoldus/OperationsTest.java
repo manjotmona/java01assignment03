@@ -1,13 +1,16 @@
 package edu.knoldus;
 
 import java.time.DayOfWeek;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static java.time.DayOfWeek.FRIDAY;
@@ -41,10 +44,14 @@ public class OperationsTest {
 
     }
 
-     @Ignore
     @Test public void getTimeFromTimeZone() {
+         LocalDateTime date = LocalDateTime.now();
+         ZoneId zone = ZoneId.of("Asia/Kabul");
+         ZonedDateTime zdt = date.atZone(zone);
+         ZoneOffset offset = zdt.getOffset();
+
         String timeFromTimeZone = Operations.getTimeFromTimeZone("Asia/Kabul");
-        String expectedResult = "2018-03-13T15:17:21.423 +04:30";
+        String expectedResult = date + " " + offset;
         assertEquals("getTimeFromTimeZone", expectedResult, timeFromTimeZone);
 
     }

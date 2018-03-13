@@ -7,6 +7,12 @@
   <groupId>edu.knoldus</groupId>
   <artifactId>java01-assignment03</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <properties>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <linkXRef>false</linkXRef>
+
+  </properties>
   <dependencies>
 
     <!-- https://mvnrepository.com/artifact/junit/junit -->
@@ -32,6 +38,7 @@
   <build>
     <plugins>
       <plugin>
+        <version>3.7.0</version>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
 
