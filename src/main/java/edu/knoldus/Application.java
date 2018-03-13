@@ -13,7 +13,7 @@ public class Application {
 
         List<DayOfWeek> list = new ArrayList<>();
         System.out.println(Operations.getBirthDates(1992, 1, 23, list));
-        Operations.getTimeFromTimeZone("Asia/Kabul");
+        System.out.println(Operations.getTimeFromTimeZone("Asia/Kabul"));
         System.out.println(Operations.findLeapYears());
 
         System.out.println(Operations.numberOfSecondsGandhiLived());

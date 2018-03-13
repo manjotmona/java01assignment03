@@ -28,13 +28,14 @@ public class Operations {
         return list;
     }
 
-    public static void getTimeFromTimeZone(String timeZone) {
+    public static String getTimeFromTimeZone(String timeZone) {
 
         LocalDateTime date = LocalDateTime.now();
         ZoneId zone = ZoneId.of(timeZone);
         ZonedDateTime zdt = date.atZone(zone);
         ZoneOffset offset = zdt.getOffset();
-        System.out.println(date + " " + offset);
+      //  System.out.println(date + " " + offset);
+        return date +" " +offset;
 
         // LocalDateTime date = LocalDateTime.now().atZone(ZoneId.of(timeZone)).toLocalDateTime();
         //System.out.println(date);
